@@ -8,7 +8,7 @@ interface Dish {
   dishType: string;
 }
 
-const useTodos = (dishType: string | undefined) => {
+const useDishes = (dishType: string | undefined) => {
   const fetchDishes = async () => {
     return axios.get<Dish[]>("http://localhost:3000/menu/dishes", { params: { type: dishType } }).then((res) => res.data);
   };
@@ -19,4 +19,4 @@ const useTodos = (dishType: string | undefined) => {
   });
 };
 
-export default useTodos;
+export default useDishes;

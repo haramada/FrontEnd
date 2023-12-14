@@ -3,7 +3,7 @@ import { CompletedOrder } from "../common/interfaces";
 import axios, { AxiosError } from "axios";
 import { toast } from "react-toastify";
 
-const addOrder = (order: CompletedOrder) => {
+const addOrder = () => {
   return useMutation({
     mutationFn: (order: CompletedOrder) => {
       return axios.post<CompletedOrder>("http://localhost:3000/orders", order).then((res) => res.data);

@@ -15,9 +15,9 @@ export default function OrderComponent() {
 
   const { data: dishes, error, isLoading } = useDishes(dishType);
 
-  let order: CompletedOrder = { mainDishes: [], sideDishes: [] };
+  console.log(dishes);
 
-  let { mutate, isSuccess } = addOrder(order);
+  let { mutate, isSuccess } = addOrder();
 
   let total = 0;
   const prices = selectedDishes.map((item) => item.price);
@@ -82,11 +82,12 @@ export default function OrderComponent() {
           size={5}
           aria-label="Size 2 select example"
         >
-          {dishes?.map((dish) => (
-            <option value={dish.id} key={dish.id}>
-              {dish.dishName}
-            </option>
-          ))}
+          {dishes &&
+            dishes?.map((dish) => (
+              <option value={dish.id} key={dish.id}>
+                {dish.dishName}
+              </option>
+            ))}
         </select>
         <div className="hstack gap-3">
           <h4 className="p-2 font-weight-bold">Total Bill Value Is {total} Rs</h4>

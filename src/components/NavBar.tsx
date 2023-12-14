@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 export default function NavBar() {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary mb-6">
       <div className="container-fluid">
         <NavLink className="navbar-brand" to="/orders">
           Colombo Restaurant

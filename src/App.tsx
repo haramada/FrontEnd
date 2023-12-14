@@ -6,7 +6,7 @@ import NavBar from "./components/NavBar";
 
 import OrderComponent from "./components/Order";
 import { Route } from "react-router-dom";
-import ReportComponent from "./components/Reports";
+import ReportComponent from "./components/reports/Reports";
 
 function App() {
   return (
