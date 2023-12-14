@@ -1,13 +1,15 @@
 import "./App.css";
-import Order from "./components/Order";
 
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ReportComponent from "./components/Reports";
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
     <>
-      <Order />
+      <NavBar />
+      <ReportComponent />
       <ToastContainer />
     </>
   );

@@ -3,7 +3,7 @@ import useDishes from "../hooks/useDishes";
 import { CompletedOrder, Dish, DishType } from "../common/interfaces";
 import addOrder from "../hooks/addOrder";
 
-export default function Order() {
+export default function OrderComponent() {
   const dishTypes: DishType[] = [
     { value: "main", displayValue: "Main Dishes" },
     { value: "side", displayValue: "Side Dishes" },
@@ -17,7 +17,7 @@ export default function Order() {
 
   let order: CompletedOrder = { mainDishes: [], sideDishes: [] };
 
-  let { mutate, error: mutateError, isSuccess, data: mutedData } = addOrder(order);
+  let { mutate, isSuccess } = addOrder(order);
 
   let total = 0;
   const prices = selectedDishes.map((item) => item.price);

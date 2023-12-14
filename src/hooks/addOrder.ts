@@ -12,6 +12,7 @@ const addOrder = (order: CompletedOrder) => {
       const dt = error.response?.data as any;
       let { errorDesc } = dt;
       toast(errorDesc);
+      throw error;
     },
   });
 };
