@@ -17,7 +17,7 @@ export default function Order() {
 
   let order: CompletedOrder = { mainDishes: [], sideDishes: [] };
 
-  let { mutate, error: mutateError, isSuccess } = addOrder(order);
+  let { mutate, error: mutateError, isSuccess, data: mutedData } = addOrder(order);
 
   let total = 0;
   const prices = selectedDishes.map((item) => item.price);
@@ -46,13 +46,8 @@ export default function Order() {
     >
       <div>
         <h1 className="mb-3">Welcome to the Colombo Restaurant</h1>
-        <h3 className="mb-3">Select a Dish Type</h3>
-        {mutateError && (
-          <div className="alert alert-danger" role="alert">
-            {mutateError.message}
-            {(mutateError = null)}
-          </div>
-        )}
+        <h4 className="mb-3">Select a Dish Category</h4>
+
         {error && (
           <div className="alert alert-danger" role="alert">
             {error.message}
@@ -94,7 +89,7 @@ export default function Order() {
           ))}
         </select>
         <div className="hstack gap-3">
-          <p className="p-2 font-weight-bold">Total Bill Value Is {total} Rs</p>
+          <h4 className="p-2 font-weight-bold">Total Bill Value Is {total} Rs</h4>
           <button type="submit" className="btn btn-success mb-2 p-2 ms-auto" disabled={selectedDishes.length === 0}>
             Complete Order
           </button>
