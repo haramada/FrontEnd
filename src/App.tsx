@@ -2,14 +2,23 @@ import "./App.css";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import ReportComponent from "./components/Reports";
 import NavBar from "./components/NavBar";
+
+import OrderComponent from "./components/Order";
+import { Route } from "react-router-dom";
+import ReportComponent from "./components/Reports";
 
 function App() {
   return (
     <>
       <NavBar />
-      <ReportComponent />
+      <main className="container">
+        <switch>
+          <Route path="/orders" component={OrderComponent} exact />
+          <Route path="/reports" component={ReportComponent} exact />
+        </switch>
+      </main>
+
       <ToastContainer />
     </>
   );
