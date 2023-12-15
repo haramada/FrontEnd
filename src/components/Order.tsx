@@ -1,3 +1,13 @@
+/**
+ * This compoenent for completing an order, the order component ensures
+ * the basic business rules are met, (although these are validated at the 
+ * backend),so it will reduce the server roundtrips,hence enhnaces the overall
+ * exeperience, 
+ * uses react quary to provide automatic refresh, retry and
+ * front end cache handling. also ustilizes auto cancelling network
+ * requests if the use navigates away
+ */
+
 import { useState } from "react";
 import useDishes from "../hooks/useDishes";
 import { CompletedOrder, Dish, DishType } from "../common/interfaces";
@@ -14,8 +24,6 @@ export default function OrderComponent() {
   const [selectedDishes, setSelectedDishes] = useState<Dish[]>([]);
 
   const { data: dishes, error, isLoading } = useDishes(dishType);
-
-  console.log(dishes);
 
   let { mutate, isSuccess } = addOrder();
 

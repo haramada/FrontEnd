@@ -1,4 +1,9 @@
-import { useState } from "react";
+/**
+ * This compoenent responsible for fetching the daily sales revenue
+ * report, uses react quary to provide automatic refresh, retry and
+ * front end cache handling. also ustilizes auto cancelling network
+ * requests if the use navigates away
+ */
 import useReportsDailySales from "../../hooks/useRepoDailySales";
 
 export default function DailySalesReportComponent() {

@@ -1,3 +1,6 @@
+/**
+ * Act as the parent component for other report components
+ */
 import { useState } from "react";
 import DailySalesReportComponent from "./DailySales";
 import FamousReportComponent from "./FamousDish";

@@ -1,3 +1,9 @@
+/**
+ * This compoenent responsible for fetching most famouse dishes
+ * report, uses react quary to provide automatic refresh, retry and
+ * front end cache handling. also ustilizes auto cancelling network
+ * requests if the use navigates away
+ */
 import useFamousDish from "../../hooks/useFamousDish";
 
 export default function FamousReportComponent() {
